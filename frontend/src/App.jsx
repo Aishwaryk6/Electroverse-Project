@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import Player from './Player.jsx'
 import './App.css'
+import AuthContext from './AuthContext.jsx' 
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return <Player></Player>
+  const {isAuthenticated} = AuthContext{}
+  return (
+    <AuthContext>
+      <Player />
+    </AuthContext>
+  )
 }
 
 export default App

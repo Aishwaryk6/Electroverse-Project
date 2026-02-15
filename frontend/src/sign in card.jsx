@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import TextInput from './TextInput';
 import Button from './Button';
 
-// 1. Accept 'onSwitch' prop here
-const SignInCard = ({ onSwitch }) => {
+const SignInCard = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleChange = (field, value) => {
@@ -19,7 +18,7 @@ const SignInCard = ({ onSwitch }) => {
     <div style={styles.card}>
       <div style={styles.header}>
         <h2 style={styles.title}>Welcome Back</h2>
-        <p style={styles.subtitle}>Enter your credentials to access business opportunities.</p>
+        <p style={styles.subtitle}>Enter your credentials to access videos.</p>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -32,14 +31,6 @@ const SignInCard = ({ onSwitch }) => {
 
         <Button label="Sign In" type="submit" />
       </form>
-
-      <div style={styles.footer}>
-        <span style={{ color: 'gray' }}>Don't have an account? </span>
-        {/* 2. Use 'onSwitch' here */}
-        <button onClick={onSwitch} style={styles.textButton}>
-          Create an account
-        </button>
-      </div>
     </div>
   );
 };
